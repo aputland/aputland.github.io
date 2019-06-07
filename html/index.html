@@ -29,60 +29,71 @@
             applicable to adult patients with heights greater than 153cm.
         </div>
         <div class="col-md-6 col-md-offest-1">
-          <div class="radio">
-            <label>
-              <input type="radio" name="heightOption" id="optionsMetric" value="optionMetric" checked>
-              Enter height in cm
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="heightOption" id="optionsImperial" value="optionImperial">
-              Enter height in feet and inches
-            </label>
-          </div>
-          <div class="radio">
-            <label>
-              <input type="radio" name="heightOption" id="optionsCalc" value="optionCalc">
-              Calculate height from weight and BMI
-            </label>
-          </div>
           <form>
-            <div class="btn-group">
+          <div class="form-group">
+            <div class="col-md-10">
+            <div class="radio">
+              <label>
+                <input type="radio" name="heightOption" id="optionsMetric" value="optionMetric" checked>
+                Enter height in cm
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="heightOption" id="optionsImperial" value="optionImperial">
+                Enter height in feet and inches
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="heightOption" id="optionsCalc" value="optionCalc">
+                Calculate height from weight and BMI
+              </label>
+            </div>
+          </div>
+          </div>
+          </form>
+          <form>
+            <div class="form-group">
+              <label class="sr-only" for="gender">Gender</label>
+              <div class="col-md-10">
                 <input class="btn btn-default" type="button" name="gender" id="optionsMale" value="Male" checked>
                 <input class="btn btn-default" type="button" name="gender" id="optionsFemale" value="Female">
+              </div>
             </div>
-          </form>
-          <form class="form-inline" id="HeightInCm">
             <div class="form-group">
               <label class="sr-only" for="inputHeightInCm">Height in cm</label>
-              <input type="text" class="form-control" id="inputHeightInCm" placeholder="Height in cm">
+              <div class="col-md-10">
+                <input type="text" class="form-control" id="inputHeightInCm" placeholder="Height in cm">
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="goMetric">Calculate tidal volume</button>
-          </form>
-
-          <form class="form-inline" id="HeightInFtInches">
             <div class="form-group">
               <label class="sr-only" for="inputHeightInFeet">Height in feet</label>
-              <input type="text" class="form-control" id="inputHeightInFeet" placeholder="Height in feet">
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputHeightInFeet" placeholder="Height in feet">
+              </div>
             </div>
             <div class="form-group">
               <label class="sr-only" for="inputHeightInInches">Height in feet</label>
-              <input type="text" class="form-control" id="inputHeightInInches" placeholder="and inches">
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputHeightInInches" placeholder="and inches">
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="goImperial">Calculate tidal volume</button>
-          </form>
-
-          <form class="form-inline" id="CalcHeightFromWtBMI">
             <div class="form-group">
               <label class="sr-only" for="inputWeightInKg">Height in feet</label>
-              <input type="text" class="form-control" id="inputWeightInKg" placeholder="Weight in kg">
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputWeightInKg" placeholder="Weight in kg">
+              </div>
             </div>
             <div class="form-group">
               <label class="sr-only" for="inputBMI">Height in feet</label>
-              <input type="text" class="form-control" id="inputBMI" placeholder="Body mass index">
+              <div class="col-sm-5">
+                <input type="text" class="form-control" id="inputBMI" placeholder="Body mass index">
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary" id="goCalc">Calculate tidal volume</button>
+            <div class="col-sm-5">
+              <button type="submit" class="btn btn-primary" id="goMetric">Calculate tidal volume</button>
+            </div>
           </form>
 
 
