@@ -19,19 +19,74 @@
   <body>
     <div class="container">
       <div class="row">
-        <h1>Protective Ventilation Calculator</h1>
-        <p>During anaesthesia the prevalence of pulmonary complications may be reduced
-          by limiting tidal volumes to between 6 and 8 ml/kg ideal body weight.</p>
-          <p>In practical terms it can be difficult to estimate the ideal body weight
-            and hence the best tidal volume required for an individual patient.</p>
-            <div class="col-md-6"
-            <form>
-              <div class="form-group">
-                <label for="inputHeightInCm">Height</label>
-                <input type="text" class="form-control" id="inputHeightInCm" placeholder="Height in cm">
-              </div>
-            </form>
+        <div class="col-md-10 col-md-offest-1">
+          <h1>Protective Ventilation Calculator</h1>
+          <p>During anaesthesia the prevalence of pulmonary complications may be reduced
+          by limiting tidal volumes to between 6 and 8 ml/kg, ideal body weight.</p>
+          <p>In practical terms, it can be difficult to estimate the ideal body weight
+          and hence the best tidal volume required for an individual patient.</p>
+          <p>This application is recommended for healthcare professionals and is only
+            applicable to adult patients with heights greater than 153cm.
+        </div>
+        <div class="col-md-6 col-md-offest-1">
+          <div class="radio">
+            <label>
+              <input type="radio" name="heightOption" id="optionsMetric" value="optionMetric" checked>
+              Enter height in cm
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="heightOption" id="optionsImperial" value="optionImperial">
+              Enter height in feet and inches
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="heightOption" id="optionsCalc" value="optionCalc">
+              Calculate height from weight and BMI
+            </label>
+          </div>
+          <form>
+            <div class="btn-group">
+                <input class="btn btn-default" type="button" name="gender" id="optionsMale" value="Male" checked>
+                <input class="btn btn-default" type="button" name="gender" id="optionsFemale" value="Female">
             </div>
+          </form>
+          <form class="form-inline" id="HeightInCm">
+            <div class="form-group">
+              <label class="sr-only" for="inputHeightInCm">Height in cm</label>
+              <input type="text" class="form-control" id="inputHeightInCm" placeholder="Height in cm">
+            </div>
+            <button type="submit" class="btn btn-primary" id="goMetric">Calculate tidal volume</button>
+          </form>
+
+          <form class="form-inline" id="HeightInFtInches">
+            <div class="form-group">
+              <label class="sr-only" for="inputHeightInFeet">Height in feet</label>
+              <input type="text" class="form-control" id="inputHeightInFeet" placeholder="Height in feet">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="inputHeightInInches">Height in feet</label>
+              <input type="text" class="form-control" id="inputHeightInInches" placeholder="and inches">
+            </div>
+            <button type="submit" class="btn btn-primary" id="goImperial">Calculate tidal volume</button>
+          </form>
+
+          <form class="form-inline" id="CalcHeightFromWtBMI">
+            <div class="form-group">
+              <label class="sr-only" for="inputWeightInKg">Height in feet</label>
+              <input type="text" class="form-control" id="inputWeightInKg" placeholder="Weight in kg">
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="inputBMI">Height in feet</label>
+              <input type="text" class="form-control" id="inputBMI" placeholder="Body mass index">
+            </div>
+            <button type="submit" class="btn btn-primary" id="goCalc">Calculate tidal volume</button>
+          </form>
+
+
+        </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
