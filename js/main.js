@@ -71,7 +71,8 @@
 
   $('#goCancel').click((e) => {
     e.preventDefault();
-    close();
+    // close();
+    open(location, '_self').close();
     // close current tab
   })
 
