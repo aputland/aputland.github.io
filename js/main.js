@@ -58,8 +58,21 @@
   $( document ).ready(()  => {
     $('#imperialHeight, #calcHeight').hide();
     $('#metricHeight').show();
+    $('#mainContent').hide();
     $('#results').hide();
     clear();
+  })
+
+  $('#goContinue').click((e) => {
+    e.preventDefault();
+    $('#disclaimer').hide();
+    $('#mainContent').show();
+  })
+
+  $('#goCancel').click((e) => {
+    e.preventDefault();
+    close();
+    // close current tab
   })
 
   $('.inputOption').change((e) => {

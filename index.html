@@ -14,17 +14,56 @@
       <div class="row">
         <div class="col-md-10 col-md-offest-1">
           <h3>Protective Ventilation Calculator</h3>
-          <p>In general anaesthesia, with the use of mechanical ventilation,
-          the prevalence of pulmonary complications may be reduced by limiting
-          tidal volumes to between 6 and 8 ml/kg using the ideal body weight.
-          In practical terms, it can be difficult to estimate the ideal body weight
-          and hence the best tidal volume required for an individual patient.
-          This application is recommended for healthcare professionals experienced
-          in adminstering anaesthesia and is only applicable to adult patients with
-          heights above 152cm (5 feet).</p>
+          <div id="disclaimer">
+            <br>
+            <h5>Introduction</h5>
+            <p>In general anaesthesia, with the use of mechanical ventilation,
+              the prevalence of pulmonary complications may be reduced by limiting
+              tidal volumes to between 6 and 8 ml/kg, using the ideal body weight.
+              In practical terms, it can be difficult to estimate the ideal body weight
+              and hence the best tidal volume required for an individual patient.
+              This software is designed to calculate a recommended range of tidal volumes
+              based on a calculation of ideal body weight made using the height and gender.</p>
+            <p>The calculation is as follows:</p>
+            <p>For men &nbsp 50 + 0.91 x (height in cm - 152.4) ml</p>
+            <p>For women &nbsp 45.5 + 0.91 x (height in cm - 152.4) ml</p>
+            <h5>Disclaimer</h5>
+            <p>This application is recommended only for healthcare professionals, experienced
+              in adminstering general anaesthesia, and is only applicable to adult patients with
+              heights above 152cm. This tool should not be used to replace the professional
+              responsibility to ensure that anaesthetised patients are ventilated safely and must be
+              used under the supervision of an appropriately qualified professional.</p>
+              <h5>Licence</h5>
+              <p>Copyright 2019 Dr A Putland</p>
+              <p>Permission is hereby granted, free of charge, to any person obtaining a copy of
+                this software and associated documentation files (the "Software"), to deal in the
+                Software without restriction, including without limitation the rights to use, copy,
+                modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+                and to permit persons to whom the Software is furnished to do so, subject to the
+                following conditions:</p>
+              <p>The above copyright notice and this permission notice shall be included in all
+                copies or substantial portions of the Software.</p>
+              <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+                INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+                PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+                FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+                OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+                DEALINGS IN THE SOFTWARE.<p>
+                <br>
+            <form>
+              <div class="form-group">
+                <input type="button" class="btn btn-primary" id="goContinue" value="I accept">
+                <input type="button" class="btn btn-secondary" id="goCancel" value="I reject">
+              </div>
+            </form>
+          </div>
         </div>
         <br>
-        <div class="col-md-10 col-md-offest-1">
+        <div class="col-md-10 col-md-offest-1" id="mainContent">
+          <br>
+          <p>Enter the patient's height or allow the app to calculate the height based
+            on the weight and body mass index.</p>
+          <br>
           <form>
           <div class="form-group">
             <div class="col-md-10">
