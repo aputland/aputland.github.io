@@ -72,7 +72,7 @@
   $('#goCancel').click((e) => {
     e.preventDefault();
     // close();
-    open(location, '_self').close();
+    $(location).attr('href','/');
     // close current tab
   })
 
