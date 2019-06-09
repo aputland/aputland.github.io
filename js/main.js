@@ -1,10 +1,10 @@
   let formOption = 'optionsMetric';
 
   let outputData = {
-    height: 166,
-    idealWeight: 63,
-    lowVT: 400,
-    highVT: 500,
+    height: 0,
+    idealWeight: 0,
+    lowVT: 0,
+    highVT: 0,
   };
 
   const clear = () => {
@@ -12,25 +12,22 @@
   };
 
   const feetToCm = (feet, inches) => {
-    console.log(feet);
-    console.log(inches);
-    //let height = 2.54*(feet*12 + inches);
     let height = 2.54 * ((feet * 12) + inches);
-    console.log(height);
+    // console.log(height);
     return Math.round(height * 10) / 10;
-  }
+  };
 
   const kgBMIToCm = (kg, BMI) => {
     let height = 100 * Math.sqrt(kg/BMI);
     return Math.round(height * 10) / 10;
-  }
+  };
 
   const allCalcs = (height, gender) => {
     outputData.height = height;
     outputData.idealWeight = idealWt(height, gender);
     outputData.lowVT = 10 * Math.round(outputData.idealWeight * 0.6);
     outputData.highVT = 10 * Math.round(outputData.idealWeight * 0.8);
-  }
+  };
 
   const idealWt = (height, gender) => {
     let ibm = 0;
@@ -40,12 +37,12 @@
       ibm = 45.5 + 0.91 * (height - 152.4);
     }
     return Math.round(ibm * 10) / 10;
-  }
+  };
 
   const kgCmToBMI = (kg, cm) => {
     let bmi = kg/(cm/100)^2;
     return Math.round(ibm * 10) / 10;
-  }
+  };
 
   const displayResults = (results) => {
     // console.log(results);
@@ -53,7 +50,7 @@
     $('#outputWeight').html(results.idealWeight);
     $('#outputLowVT').html(results.lowVT);
     $('#outputHighVT').html(results.highVT);
-  }
+  };
 
   $( document ).ready(()  => {
     $('#imperialHeight, #calcHeight').hide();
@@ -61,20 +58,13 @@
     $('#mainContent').hide();
     $('#results').hide();
     clear();
-  })
+  });
 
   $('#goContinue').click((e) => {
     e.preventDefault();
     $('#disclaimer').hide();
     $('#mainContent').show();
-  })
-
-  $('#goCancel').click((e) => {
-    e.preventDefault();
-    // close();
-    history.go(-1);
-    // close current tab
-  })
+  });
 
   $('.inputOption').change((e) => {
     e.preventDefault();
