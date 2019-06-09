@@ -48,7 +48,7 @@
   }
 
   const displayResults = (results) => {
-    console.log(results);
+    // console.log(results);
     $('#outputHeight').html(results.height);
     $('#outputWeight').html(results.idealWeight);
     $('#outputLowVT').html(results.lowVT);
@@ -132,6 +132,7 @@
     if (valid) {
       allCalcs(height, gender);
       displayResults(outputData);
+      $('html, body').scrollTop($(document).height());
       $('#results').show();
     } else {
       $('#results').hide();
