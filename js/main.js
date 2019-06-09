@@ -132,7 +132,7 @@
     if (valid) {
       allCalcs(height, gender);
       displayResults(outputData);
-      $('html, body').scrollTop($(document).height());
+      $('body, html').animate({scrollTop: $("#results").offset().top}, 600);
       $('#results').show();
     } else {
       $('#results').hide();
