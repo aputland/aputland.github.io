@@ -5,6 +5,7 @@
     idealWeight: 0,
     lowVT: 0,
     highVT: 0,
+    gender: '',
   };
 
   const clear = () => {
@@ -27,6 +28,11 @@
     outputData.idealWeight = idealWt(height, gender);
     outputData.lowVT = 10 * Math.round(outputData.idealWeight * 0.6);
     outputData.highVT = 10 * Math.round(outputData.idealWeight * 0.8);
+    if (gender==='m') {
+      outputData.gender="Male";
+    } else {
+      outputData.gender="Female";
+    };
   };
 
   const idealWt = (height, gender) => {
@@ -46,6 +52,7 @@
 
   const displayResults = (results) => {
     // console.log(results);
+    $('#outputGender').html(results.gender);
     $('#outputHeight').html(results.height);
     $('#outputWeight').html(results.idealWeight);
     $('#outputLowVT').html(results.lowVT);
@@ -100,6 +107,10 @@
     switch(formOption) {
       case 'optionsMetric':
         height = parseFloat($('#inputCm').val());
+        if (isNaN(height)) {
+          valid=false;
+          errorMessage='You must enter a number of cm';
+        }
         break;
       case 'optionsImperial':
         // some validation
@@ -107,12 +118,21 @@
           parseInt($('#inputFeet').val()),
           parseFloat($('#inputInches').val())
         );
+        if (isNaN(height)) {
+          valid=false;
+          errorMessage='You have not entered valid values for feet and inches';
+        }
         break;
       case 'optionsCalc':
         height = kgBMIToCm(
           parseFloat($('#inputWeight').val()),
           parseInt($('#inputBMI').val())
         );
+        console.log(height);
+        if (isNaN(height)) {
+          valid= false;
+          errorMessage='You must enter numbers for weight and BMI'
+        }
         break;
     };
     if (height<153 || height>220) {
@@ -123,9 +143,23 @@
       allCalcs(height, gender);
       displayResults(outputData);
       $('body, html').animate({scrollTop: $("#results").offset().top}, 600);
+      $('#mainContent').hide();
       $('#results').show();
     } else {
       $('#results').hide();
       alert(errorMessage);
     };
+  });
+
+  $('#goNewPatient').click((e) => {
+    e.preventDefault();
+    formOption = 'optionsMetric';
+    clear();
+    $('input:radio[name=inputGender]:checked').prop('checked', false);
+    $('input:radio[name=heightOption]:checked').prop('checked', false);
+    $('#optionsMetric').prop('checked', true);
+    $('#imperialHeight, #calcHeight').hide();
+    $('#metricHeight').show();
+    $('#results').hide();
+    $('#mainContent').show();
   });
